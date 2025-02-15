@@ -11,6 +11,10 @@ function ModeSelection() {
     navigate('/');  // เมื่อกดไอคอนบ้าน จะกลับไปที่หน้า Home
   };
 
+  const handleMatching = () => {
+    navigate('/matching');  // เมื่อกด 1 v 1 จะไปหน้า Matching
+  };
+
   const handleTimeInput = () => {
     const inputTime = prompt("pop up ใส่เวลา");
     if (inputTime !== null) {
@@ -62,9 +66,9 @@ function ModeSelection() {
             {time && `: ${time} นาที`}
           </button>
         </div>
-
+        {/* ปุ่มเล่น 1 v 1 */}
         <div className="d-flex justify-content-center mb-3" style={{ width: '100%' }}>
-          <button className="btn btn-success py-3" style={{ fontSize: '1.5rem', width: '100%', borderRadius: '10px' }}>
+          <button className="btn btn-success py-3" style={{ fontSize: '1.5rem', width: '100%', borderRadius: '10px' }} onClick={handleMatching}>
             1 v 1
           </button>
         </div>
