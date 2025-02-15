@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css';  // เรียกใช้ไอคอนจาก Bootstrap Icons
+import './style.css';
 
 function Home() {
   const handleExit = () => {
@@ -7,7 +8,7 @@ function Home() {
   };
 
   return (
-    <div 
+    <div
       className="d-flex justify-content-center align-items-center min-vh-100"
       style={{
         backgroundImage: 'url(/777.gif)',  // ใช้พื้นหลัง GIF จาก public
@@ -19,28 +20,32 @@ function Home() {
       }}
     >
       {/* div หลักที่ใช้จัดตำแหน่งปุ่ม */}
-      <div style={{ width: '500px', textAlign: 'center' }}>
+      <div style={{ width: '500px', textAlign: 'center', backgroundColor: 'rgba(0, 0, 0, 0.6)', padding: '20px', borderRadius: '15px' }}>
 
         <div className="d-flex justify-content-center align-items-center mb-4">
-          <h2 className="text-primary" style={{ fontSize: '2rem' }}>davinci mystery game</h2>
+          <h2 className="text-light" style={{ fontSize: '3rem', fontFamily: 'Georgia, serif', animation: 'fadeIn 2s ease-in-out', display: 'flex', alignItems: 'center' }}>
+            <span style={{ marginRight: '5px' }}>Da Vinci Mystery</span>
+            <span>Game</span>
+          </h2>
         </div>
 
+        {/* เพิ่มภาพ gif */}
         <div className="mb-4">
-          <img src="/888.gif" alt="GIF" style={{ width: '30%', maxWidth: '100px', margin: '2 auto' }} />
+          <img src="/888.gif" alt="GIF" style={{ width: '40%', maxWidth: '120px', margin: '2 auto' }} />
         </div>
 
-        {/* ใช้ Flexbox เพื่อจัดระเบียบปุ่มในแนวตั้ง */}
+        {/* ปุ่มเริ่มและออก */}
         <div className="d-flex flex-column justify-content-center align-items-center">
-          <button 
-            className="btn btn-primary mb-3 py-3"  
-            style={{ fontSize: '1.7rem', zIndex: 1, width: '50%', borderRadius: '10px' }}
+          <button
+            className="btn btn-primary mb-3 py-3"
+            style={{ fontSize: '1.7rem', zIndex: 1, width: '60%', borderRadius: '12px', boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.3)', animation: 'bounce 1s infinite' }}
           >
             เริ่ม
           </button>
 
-          <button 
-            className="btn btn-secondary mb-3 py-3" 
-            style={{ fontSize: '1.7rem', zIndex: 1, width: '50%', borderRadius: '10px' }}
+          <button
+            className="btn btn-danger mb-3 py-3"
+            style={{ fontSize: '1.7rem', zIndex: 1, width: '60%', borderRadius: '12px', boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.3)', animation: 'bounce 1s infinite' }}
             onClick={handleExit} // เพิ่มฟังก์ชันเมื่อกดปุ่ม
           >
             ออก
@@ -48,43 +53,46 @@ function Home() {
         </div>
       </div>
 
-      {/* ปุ่มฟันเฟืองด้านซ้ายล่าง */}
-      <div 
-        className="position-absolute" 
+      {/* ไอคอนฟันเฟืองด้านซ้ายล่าง */}
+      <div
+        className="position-absolute"
         style={{
-          bottom: '20px', 
-          left: '20px', 
-          fontSize: '2rem', 
-          zIndex: 2, 
-          color: 'white'
+          bottom: '20px',
+          left: '20px',
+          fontSize: '2.5rem',
+          zIndex: 2,
+          color: 'white',
+          cursor: 'pointer'
         }}
       >
         <i className="bi bi-gear"></i> {/* ใช้ไอคอนฟันเฟืองจาก Bootstrap Icons */}
       </div>
 
       {/* ปุ่มสมุด (คู่มือ) ด้านซ้ายบน */}
-      <div 
-        className="position-absolute" 
+      <div
+        className="position-absolute"
         style={{
-          top: '20px', 
-          left: '20px', 
-          fontSize: '2rem', 
-          zIndex: 2, 
-          color: 'white'
+          top: '20px',
+          left: '20px',
+          fontSize: '2.5rem',
+          zIndex: 2,
+          color: 'white',
+          cursor: 'pointer'
         }}
       >
         <i className="bi bi-book"></i> {/* ใช้ไอคอนสมุดจาก Bootstrap Icons */}
       </div>
 
       {/* ไอคอนโปรไฟล์ด้านขวาบน */}
-      <div 
-        className="position-absolute" 
+      <div
+        className="position-absolute"
         style={{
-          top: '30px', 
-          right: '30px', 
-          fontSize: '2rem', 
-          zIndex: 2, 
-          color: 'white'
+          top: '30px',
+          right: '30px',
+          fontSize: '2.5rem',
+          zIndex: 2,
+          color: 'white',
+          cursor: 'pointer'
         }}
       >
         <i className="bi bi-person-circle"></i> {/* ใช้ไอคอนโปรไฟล์จาก Bootstrap Icons */}
