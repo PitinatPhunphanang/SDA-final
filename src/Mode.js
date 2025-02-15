@@ -23,14 +23,14 @@ function ModeSelection() {
         <button className="btn btn-primary mb-3 py-3" style={{ fontSize: '1.5rem', width: '80%', borderRadius: '10px' }}>
           โหมดหลัก
         </button>
-        <button className="btn btn-secondary mb-3 py-3 d-flex justify-content-center align-items-center" style={{ fontSize: '1.5rem', width: '80%', borderRadius: '10px' }}>
+        <button className="btn btn-secondary mb-3 py-3" style={{ fontSize: '1.5rem', width: '80%', borderRadius: '10px' }}>
           <span className="me-2">เล่นคนเดียว</span>
           <i className="bi bi-clock"></i> {/* ไอคอนกำหนดเวลา */}
         </button>
         <button className="btn btn-success mb-3 py-3" style={{ fontSize: '1.5rem', width: '80%', borderRadius: '10px' }}>
           1 v 1
         </button>
-        <button className="btn btn-dark mb-3 py-3 d-flex justify-content-center align-items-center" style={{ fontSize: '1.5rem', width: '80%', borderRadius: '10px' }}>
+        <button className="btn btn-dark mb-3 py-3" style={{ fontSize: '1.3Srem', width: '60%', borderRadius: '10px' }}>
           <span className="me-2">สร้างห้อง</span>
           <i className="bi bi-clock"></i> {/* ไอคอนกำหนดเวลา */}
         </button>
