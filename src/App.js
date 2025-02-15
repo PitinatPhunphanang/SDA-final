@@ -6,7 +6,7 @@ import ModeSelection from './Mode';
 function App() {
   return (
     <div className="App">
-      <ModeSelection />
+      <Home />
     </div>
   );
 }

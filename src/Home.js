@@ -23,10 +23,11 @@ function Home() {
       <div style={{ width: '500px', textAlign: 'center', backgroundColor: 'rgba(0, 0, 0, 0.6)', padding: '20px', borderRadius: '15px' }}>
 
         <div className="d-flex justify-content-center align-items-center mb-4">
-          <h2 className="text-light" style={{ fontSize: '3rem', fontFamily: 'Georgia, serif', animation: 'fadeIn 2s ease-in-out', display: 'flex', alignItems: 'center' }}>
-            <span style={{ marginRight: '5px' }}>Da Vinci Mystery</span>
+          <h2 className="text-light" style={{ fontSize: '3rem', fontFamily: 'Georgia, serif', animation: 'fadeIn 2s ease-in-out', display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+            <span style={{ marginBottom: '5px' }}>Da Vinci Mystery</span>
             <span>Game</span>
           </h2>
+
         </div>
 
         {/* เพิ่มภาพ gif */}
