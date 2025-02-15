@@ -1,8 +1,15 @@
 import React from 'react';
-import 'bootstrap-icons/font/bootstrap-icons.css';  // เรียกใช้ไอคอนจาก Bootstrap Icons
+import { useNavigate } from 'react-router-dom';  // นำเข้า useNavigate
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import './style.css';
 
 function Home() {
+  const navigate = useNavigate();  // ใช้ navigate สำหรับการเปลี่ยนหน้า
+
+  const handleStart = () => {
+    navigate('/mode');  // เมื่อกดปุ่ม เริ่ม จะไปที่ /mode
+  };
+
   const handleExit = () => {
     window.close(); // คำสั่งในการปิดหน้าเว็บ
   };
@@ -11,34 +18,32 @@ function Home() {
     <div
       className="d-flex justify-content-center align-items-center min-vh-100"
       style={{
-        backgroundImage: 'url(/777.gif)',  // ใช้พื้นหลัง GIF จาก public
-        backgroundSize: 'cover',          // ทำให้ GIF ปรับขนาดให้พอดีกับหน้าจอ
-        backgroundPosition: 'center',     // จัดตำแหน่งให้ GIF อยู่ตรงกลาง
-        backgroundRepeat: 'no-repeat',    // ไม่ให้ GIF ซ้ำ
-        position: 'relative',             // ทำให้ปุ่มสามารถซ้อนทับกับพื้นหลังได้
-        height: '100vh',                  // ทำให้พื้นหลังเต็มหน้าจอ
+        backgroundImage: 'url(/777.gif)',  
+        backgroundSize: 'cover',          
+        backgroundPosition: 'center',     
+        backgroundRepeat: 'no-repeat',    
+        position: 'relative',             
+        height: '100vh',                  
       }}
     >
-      {/* div หลักที่ใช้จัดตำแหน่งปุ่ม */}
       <div style={{ width: '500px', textAlign: 'center', backgroundColor: 'rgba(0, 0, 0, 0.6)', padding: '20px', borderRadius: '15px' }}>
 
         <div className="d-flex justify-content-center align-items-center mb-4">
-          <h2 className="text-light" style={{ fontSize: '3rem', fontFamily: 'Georgia, serif', animation: 'fadeIn 2s ease-in-out', display: 'flex', alignItems: 'center' }}>
-            <span style={{ marginRight: '5px' }}>Da Vinci Mystery</span>
+          <h2 className="text-light" style={{ fontSize: '3rem', fontFamily: 'Georgia, serif', animation: 'fadeIn 2s ease-in-out', display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
+            <span style={{ marginBottom: '5px' }}>Da Vinci Mystery</span>
             <span>Game</span>
           </h2>
         </div>
 
-        {/* เพิ่มภาพ gif */}
         <div className="mb-4">
           <img src="/888.gif" alt="GIF" style={{ width: '40%', maxWidth: '120px', margin: '2 auto' }} />
         </div>
 
-        {/* ปุ่มเริ่มและออก */}
         <div className="d-flex flex-column justify-content-center align-items-center">
           <button
             className="btn btn-primary mb-3 py-3"
             style={{ fontSize: '1.7rem', zIndex: 1, width: '60%', borderRadius: '12px', boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.3)', animation: 'bounce 1s infinite' }}
+            onClick={handleStart}  // เมื่อกดปุ่ม เริ่ม จะเรียกฟังก์ชัน handleStart
           >
             เริ่ม
           </button>
@@ -46,14 +51,13 @@ function Home() {
           <button
             className="btn btn-danger mb-3 py-3"
             style={{ fontSize: '1.7rem', zIndex: 1, width: '60%', borderRadius: '12px', boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.3)', animation: 'bounce 1s infinite' }}
-            onClick={handleExit} // เพิ่มฟังก์ชันเมื่อกดปุ่ม
+            onClick={handleExit}
           >
             ออก
           </button>
         </div>
       </div>
 
-      {/* ไอคอนฟันเฟืองด้านซ้ายล่าง */}
       <div
         className="position-absolute"
         style={{
@@ -65,10 +69,9 @@ function Home() {
           cursor: 'pointer'
         }}
       >
-        <i className="bi bi-gear"></i> {/* ใช้ไอคอนฟันเฟืองจาก Bootstrap Icons */}
+        <i className="bi bi-gear"></i>
       </div>
 
-      {/* ปุ่มสมุด (คู่มือ) ด้านซ้ายบน */}
       <div
         className="position-absolute"
         style={{
@@ -80,10 +83,9 @@ function Home() {
           cursor: 'pointer'
         }}
       >
-        <i className="bi bi-book"></i> {/* ใช้ไอคอนสมุดจาก Bootstrap Icons */}
+        <i className="bi bi-book"></i>
       </div>
 
-      {/* ไอคอนโปรไฟล์ด้านขวาบน */}
       <div
         className="position-absolute"
         style={{
@@ -95,7 +97,7 @@ function Home() {
           cursor: 'pointer'
         }}
       >
-        <i className="bi bi-person-circle"></i> {/* ใช้ไอคอนโปรไฟล์จาก Bootstrap Icons */}
+        <i className="bi bi-person-circle"></i>
       </div>
     </div>
   );
