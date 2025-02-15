@@ -89,8 +89,8 @@ function Home() {
       <div
         className="position-absolute"
         style={{
-          top: '30px',
-          right: '30px',
+          top: '20px',
+          right: '20px',
           fontSize: '2.5rem',
           zIndex: 2,
           color: 'white',

@@ -5,6 +5,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 function ModeSelection() {
   const navigate = useNavigate();  // ใช้ navigate สำหรับการเปลี่ยนหน้า
   const [time, setTime] = useState("");  // ใช้เพื่อเก็บเวลาที่กรอก
+  const [points, setPoints] = useState(0);  // เพิ่มจำนวนคะแนน (ตัวอย่างเริ่มต้นที่ 0)
 
   const handleGoHome = () => {
     navigate('/');  // เมื่อกดไอคอนบ้าน จะกลับไปที่หน้า Home
@@ -100,7 +101,7 @@ function ModeSelection() {
         style={{
           bottom: '20px', 
           left: '20px', 
-          fontSize: '2rem', 
+          fontSize: '2.5rem', 
           color: 'white',
           cursor: 'pointer'
         }}
@@ -113,8 +114,8 @@ function ModeSelection() {
       <div 
         className="position-absolute" 
         style={{
-          top: '30px',
-          right: '30px',
+          top: '20px',
+          right: '20px',
           fontSize: '2.5rem',
           zIndex: 2,
           color: 'white',
@@ -122,6 +123,54 @@ function ModeSelection() {
         }}
       >
         <i className="bi bi-person-circle"></i>
+      </div>
+
+      {/* ไอคอนซื้อของ */}
+      <div 
+        className="position-absolute" 
+        style={{
+          top: '20px', 
+          left: '20px', 
+          fontSize: '2.5rem', 
+          color: 'white', 
+          cursor: 'pointer'
+        }}
+      >
+        <i className="bi bi-shop"></i>
+        <span style={{
+          marginLeft: '10px',
+          fontSize: '1.7rem',
+          color: 'white',
+        }}>
+          ร้านค้า
+        </span>
+      </div>
+
+      {/* แสดงคะแนนใต้ไอคอนซื้อของ */}
+      <div
+        className="position-absolute"
+        style={{
+          top: '80px',  // เพิ่มช่องว่างให้มากขึ้นจากไอคอน
+          left: '20px', 
+          fontSize: '1rem',  // ปรับขนาดฟอนต์ให้เล็กลง
+          color: 'white',
+        }}
+      >
+        <span>คะแนน: {points}</span>
+      </div>
+
+      {/* ไอคอน leaderboard */}
+      <div 
+        className="position-absolute" 
+        style={{
+          bottom: '20px', 
+          right: '20px', 
+          fontSize: '2.5rem', 
+          color: 'white', 
+          cursor: 'pointer'
+        }}
+      >
+        <i className="bi bi-trophy"></i>
       </div>
     </div>
   );
