@@ -1,12 +1,20 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';  // นำเข้า useNavigate
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function ModeSelection() {
   const navigate = useNavigate();  // ใช้ navigate สำหรับการเปลี่ยนหน้า
+  const [time, setTime] = useState("");  // ใช้เพื่อเก็บเวลาที่กรอก
 
   const handleGoHome = () => {
     navigate('/');  // เมื่อกดไอคอนบ้าน จะกลับไปที่หน้า Home
+  };
+
+  const handleTimeInput = () => {
+    const inputTime = prompt("pop up ใส่เวลา");
+    if (inputTime !== null) {
+      setTime(inputTime);
+    }
   };
 
   return (
@@ -21,24 +29,69 @@ function ModeSelection() {
         height: '100vh',
       }}
     >
-      <div style={{ width: '500px', textAlign: 'center', background: 'rgba(255, 255, 255, 0.8)', padding: '20px', borderRadius: '10px' }}>
+      <div 
+        style={{
+          width: '500px',
+          textAlign: 'center',
+          background: 'rgba(255, 255, 255, 0.8)',
+          padding: '20px',
+          borderRadius: '10px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
         
-        <h2 className="text-dark mb-4">เลือกโหมด</h2>
-        
-        <button className="btn btn-primary mb-3 py-3" style={{ fontSize: '1.5rem', width: '80%', borderRadius: '10px' }}>
-          โหมดหลัก
-        </button>
-        <button className="btn btn-secondary mb-3 py-3" style={{ fontSize: '1.5rem', width: '80%', borderRadius: '10px' }}>
-          <span className="me-2">เล่นคนเดียว</span>
-          <i className="bi bi-clock"></i>
-        </button>
-        <button className="btn btn-success mb-3 py-3" style={{ fontSize: '1.5rem', width: '80%', borderRadius: '10px' }}>
-          1 v 1
-        </button>
-        <button className="btn btn-dark mb-3 py-3" style={{ fontSize: '1.3Srem', width: '60%', borderRadius: '10px' }}>
-          <span className="me-2">สร้างห้อง</span>
-          <i className="bi bi-clock"></i>
-        </button>
+        <h2 className="text-dark mb-4">โหมด</h2>
+
+        <div className="d-flex mb-3" style={{ gap: '10px', width: '100%' }}>
+          {/* ปุ่มเล่นคนเดียว */}
+          <button className="btn btn-secondary py-3" style={{ fontSize: '1.5rem', width: '100%', borderRadius: '10px' }}>
+            เล่นคนเดียว
+          </button>
+
+          {/* ปุ่มนาฬิกา */}
+          <button 
+            className="btn btn-warning py-3 d-flex justify-content-center align-items-center" 
+            style={{ fontSize: '1.5rem', width: '20%', borderRadius: '10px' }}
+            onClick={handleTimeInput}
+          >
+            <i className="bi bi-clock me-2"></i>
+            {time && `: ${time} นาที`}
+          </button>
+        </div>
+
+        <div className="d-flex justify-content-center mb-3" style={{ width: '100%' }}>
+          <button className="btn btn-success py-3" style={{ fontSize: '1.5rem', width: '100%', borderRadius: '10px' }}>
+            1 v 1
+          </button>
+        </div>
+
+        {/* ปุ่มสร้างห้อง */}
+        <div 
+          className="position-relative"
+          style={{ width: 'auto', marginTop: '5px' }}
+        >
+          <button 
+            className="btn btn-dark py-2 d-flex justify-content-center align-items-center" 
+            style={{ fontSize: '0.875rem', height: '45px', width: '170px', borderRadius: '0px' }}
+          >
+            สร้างห้อง
+          </button>
+
+          {/* ไอคอนประวัติการเล่น (ไม่ต้องมีปุ่มแล้ว ใช้แค่ไอคอน) */}
+          <i 
+            className="bi bi-clock-history position-absolute" 
+            style={{ 
+              fontSize: '2rem', 
+              color: 'white', 
+              left: 'calc(100% + 10px)', 
+              top: '50%', 
+              transform: 'translateY(-50%)' 
+            }}
+          ></i>
+        </div>
       </div>
 
       {/* ไอคอนกลับหน้าแรก */}
